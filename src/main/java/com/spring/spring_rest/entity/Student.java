@@ -6,6 +6,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+/**
+ * Entity class representing a student record in the database.
+ * Maps student information to the student table.
+ */
 @Entity
 public class Student {
 
@@ -17,7 +21,7 @@ public class Student {
     @Column (name = "first_name", nullable = false)
     private String firstName;
 
-    @Column (name = "last_ name", nullable = false)
+    @Column (name = "last_name", nullable = false)
     private String lastName;
 
     @Column (name ="email", nullable = false, unique = true)

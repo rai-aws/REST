@@ -1,14 +1,29 @@
 package com.spring.spring_rest.dto;
 
-import com.spring.spring_rest.entity.Student;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
 
+/**
+ * Data Transfer Object (DTO) for transferring student information.
+ * Includes validation constraints for student details.
+ */
 public class StudentDto {
     private Long id;
+
+    @Size(min =2, max=50, message = "Must be 2 to 50 characters")
     private String firstName;
+
+    @Size(min =2, max=50, message = "Must be 2 to 50 characters")
     private String lastName;
+
+    @Email(message = "Email is required and should be valid")
     private String email;
 
-    public StudentDto(Long id, String firstName, String lastName, String email) {
+    public StudentDto() {
+    }
+
+    public StudentDto(Long id, String firstName, 
+                        String lastName, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -47,8 +62,4 @@ public class StudentDto {
         this.email = email;
     }
 
-    
-
-
-    
 }

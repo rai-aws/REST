@@ -1,5 +1,9 @@
 package com.spring.spring_rest.entity;
 
+/**
+ * Represents the error response returned when an exception occurs.
+ * Contains the HTTP status code, error message, and timestamp.
+ */
 public class StudentErrorResponse {
 
     private int status;
@@ -39,8 +43,5 @@ public class StudentErrorResponse {
     public void setTimeStamp(long timeStamp) {
         this.timeStamp = timeStamp;
     }
-
-    
-
 
 }

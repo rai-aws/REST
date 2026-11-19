@@ -291,6 +291,62 @@
 			},
 			"response": [
 				{
+					"name": "update_student_valid",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Waldhime\",\r\n    \"lastName\": \"Nicanor\",\r\n    \"email\": \"WaldhimeNicanor@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/students/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Nov 2026 06:45:33 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"firstName\": \"Waldhime\",\n    \"lastName\": \"Nicanor\",\n    \"email\": \"WaldhimeNicanor@gmail.com\"\n}"
+				},
+				{
 					"name": "update_student_invalid(Int)",
 					"originalRequest": {
 						"method": "PUT",
@@ -486,13 +542,69 @@
 					"body": "{\n    \"id\": 2,\n    \"firstName\": \"Vicente\",\n    \"lastName\": \"Nicanor\",\n    \"email\": \"WaldhimeNicanor@gmail.com\"\n}"
 				},
 				{
-					"name": "patch_student_invalid(Id)",
+					"name": "patch_student_email",
 					"originalRequest": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"email@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"email\": \"new@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/students/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Nov 2026 06:47:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"firstName\": \"Waldhime\",\n    \"lastName\": \"Nicanor\",\n    \"email\": \"new@email.com\"\n}"
+				},
+				{
+					"name": "patch_student_invalid(id)",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"new@email.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -513,8 +625,8 @@
 							]
 						}
 					},
-					"status": "Bad Request",
-					"code": 400,
+					"status": "Not Found",
+					"code": 404,
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
@@ -527,15 +639,19 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 12 Nov 2026 06:52:36 GMT"
+							"value": "Thu, 19 Nov 2026 06:48:57 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
 						},
 						{
 							"key": "Connection",
-							"value": "close"
+							"value": "keep-alive"
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"email\": \"Email is required and should be valid\"\n}"
+					"body": "{\n    \"status\": 404,\n    \"message\": \"Student id 15 not found!\",\n    \"timeStamp\": 1795070937665\n}"
 				},
 				{
 					"name": "patch_student_invalid(String)",
@@ -544,7 +660,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"email@gmail.com\"\r\n}",
+							"raw": "{\r\n    \"email\": \"new@email.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -579,7 +695,7 @@
 						},
 						{
 							"key": "Date",
-							"value": "Thu, 12 Nov 2026 06:52:36 GMT"
+							"value": "Thu, 19 Nov 2026 06:49:45 GMT"
 						},
 						{
 							"key": "Connection",
@@ -587,7 +703,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"email\": \"Email is required and should be valid\"\n}"
+					"body": "{\n    \"status\": 400,\n    \"message\": \"Invalid Data. Only integers are accepted\",\n    \"timeStamp\": 1795070985781\n}"
 				}
 			]
 		},
@@ -611,6 +727,53 @@
 				}
 			},
 			"response": [
+				{
+					"name": "delete_student_valid",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/students/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"students",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Nov 2026 06:50:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Student deleted successfully!"
+				},
 				{
 					"name": "delete_student_invalid(Int)",
 					"originalRequest": {

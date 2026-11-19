@@ -15,7 +15,7 @@ public class StudentDto {
 
     @Size(min =2, max=50, message = "Must be 2 to 50 characters")
     private String lastName;
-
+    
     @Email(message = "Email is required and should be valid")
     private String email;
 
